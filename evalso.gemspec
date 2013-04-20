@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Evalso::VERSION
   spec.authors       = ["Nick Markwell"]
   spec.email         = ["nick@duckinator.net"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Evaluates code safely, via http://eval.so}
+  spec.summary       = %q{Evaluates code safely, via http://eval.so}
+  spec.homepage      = "http://github.com/duckinator/ruby-evalso"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
