@@ -35,7 +35,6 @@ module Evalso
       ret = JSON.parse(self.class.post('/evaluate', opts).body)
       @response = Response.new(code, ret)
     end
-def hash;@hash;end
   end
 
   class Response
