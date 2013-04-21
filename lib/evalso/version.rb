@@ -1,3 +1,3 @@
-module Evalso
-  VERSION = "0.0.2"
+class Evalso
+  VERSION = "0.0.3"
 end
