@@ -7,7 +7,7 @@ require "base64"
 
 # Current API docs: http://eval.so/api/1
 
-module Evalso
+class Evalso
   API_VERSION = 1
 
   def self.base_uri(uri = nil)
