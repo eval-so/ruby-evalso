@@ -26,7 +26,7 @@ class Evalso
     include HTTParty
     base_uri Evalso.base_uri
 
-    attr_accessor :response
+    attr_reader :response
 
     # Usage:
     #   Evalso::Request.new(lang, code, inputFiles: ["filename.txt"])
@@ -83,8 +83,8 @@ class Evalso
   end
 
   class Response
-    attr_accessor :code, :stdout, :stderr, :wall_time, :remaining_evaluations,
-                  :output_files, :compilation_result
+    attr_reader :code, :stdout, :stderr, :wall_time, :remaining_evaluations,
+                :output_files, :compilation_result
 
     def initialize(code, hash)
       @code   = code
