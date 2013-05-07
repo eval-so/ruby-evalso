@@ -9,6 +9,7 @@ require "base64"
 
 class Evalso
   API_VERSION = 1
+  DEFAULT_URI = "http://eval.so/api/"
 
   def self.base_uri(uri = nil)
     return @@base_uri unless uri
@@ -16,7 +17,7 @@ class Evalso
     @@base_uri = uri
   end
 
-  base_uri 'http://eval.so/api/'
+  base_uri DEFAULT_URI
 
   def self.run(hash)
     Request.new(hash).response
