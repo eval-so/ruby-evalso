@@ -85,13 +85,14 @@ class Evalso
   end
 
   class Response
-    attr_reader :code, :stdout, :stderr, :wall_time, :remaining_evaluations,
-                :output_files, :compilation_result
+    attr_reader :code, :stdout, :stderr, :return, :wall_time,
+                :remaining_evaluations, :output_files, :compilation_result
 
     def initialize(code, hash)
       @code   = code
       @stdout = hash["stdout"]
       @stderr = hash["stderr"]
+      @return = hash["return"]
       @wall_time = hash["wallTime"]
       @exit_code = hash["exitCode"]
       @output_files = handle_output_files(hash["outputFiles"] || {})
