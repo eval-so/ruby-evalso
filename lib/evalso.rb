@@ -25,7 +25,6 @@ class Evalso
 
   class Request
     include HTTParty
-    base_uri Evalso.base_uri
 
     attr_reader :response
 
@@ -39,6 +38,8 @@ class Evalso
     #
     # If `language` or `code` are not specified, an ArugmentError is raised.
     def initialize(hash)
+      self.class.base_uri Evalso.base_uri
+
       hash = {
         :api_version => Evalso::API_VERSION,
         :language    => nil,
