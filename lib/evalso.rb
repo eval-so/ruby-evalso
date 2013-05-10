@@ -23,6 +23,11 @@ class Evalso
     Request.new(hash).response
   end
 
+  def self.languages
+    raw = HTTParty.get(base_uri + 'languages').body
+    JSON.parse(raw)
+  end
+
   class Request
     include HTTParty
 
