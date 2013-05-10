@@ -11,6 +11,8 @@ class Evalso
   API_VERSION = 1
   DEFAULT_URI = "http://eval.so/api/"
 
+  class HTTPError < Exception; end
+
   def self.base_uri(uri = nil)
     return @@base_uri unless uri
 
@@ -67,7 +69,15 @@ class Evalso
         }
       }
 
-      ret = JSON.parse(self.class.post('/evaluate', opts).body)
+      resp = self.class.post('/evaluate', opts)
+      ret = JSON.parse(resp.body)
+
+      if !resp.response.is_a?(Net::HTTPSuccess)
+        error = ret['error']
+        error ||= "#{resp.response.code} #{resp.response.msg.inspect}"
+        raise Evalso::HTTPError, ret['error']
+      end
+
       @response = Response.new(@hash[:code], ret)
     end
 
