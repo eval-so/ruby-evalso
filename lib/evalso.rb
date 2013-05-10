@@ -26,8 +26,6 @@ class Evalso
   class Request
     include HTTParty
 
-    attr_reader :response
-
     # Usage:
     #   Evalso::Request.new(lang, code, inputFiles: ["filename.txt"])
     # or
@@ -53,15 +51,19 @@ class Evalso
 
       hash[:inputFiles] = handle_input_files(hash[:inputFiles])
 
+      @hash = hash
+    end
+
+    def response
       opts = {
-        :body    => hash.to_json,
+        :body    => @hash.to_json,
         :headers => {
           "Content-Type" => "text/json"
         }
       }
 
       ret = JSON.parse(self.class.post('/evaluate', opts).body)
-      @response = Response.new(hash[:code], ret)
+      @response = Response.new(@hash[:code], ret)
     end
 
     def handle_input_files(files)
