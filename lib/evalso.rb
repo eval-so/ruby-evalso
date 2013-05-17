@@ -3,6 +3,8 @@ require "httparty"
 require "json"
 require "base64"
 
+require 'evalso/languages'
+
 # TODO: Handle auth, once eval.so supports it.
 
 # Current API docs: http://eval.so/api/1
@@ -26,8 +28,7 @@ class Evalso
   end
 
   def self.languages
-    raw = HTTParty.get(base_uri + 'languages').body
-    JSON.parse(raw)
+    Evalso::Languages.languages
   end
 
   class Request
