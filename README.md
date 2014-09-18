@@ -21,7 +21,7 @@ Or install it yourself as:
 ```ruby
 require 'evalso'
 
-p Evalso.run(:ruby, "puts 'lawl')
+p Evalso.run(:ruby, "puts 'lawl'")
 
 # Example output:
 #   #<Evalso::Response code="puts 'lawl'" stdout="lawl\n" stderr="" wall_time=1666>
