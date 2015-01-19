@@ -126,6 +126,19 @@ class Evalso
     def inspect
       "#<#{self.class.name} code=#{code.inspect} stdout=#{stdout.inspect} stderr=#{stderr.inspect} wall_time=#{wall_time.inspect}>"
     end
+
+    def to_json
+      {
+        code:     @code,
+        stdount:  @stdout,
+        stderr:   @stderr,
+        return:   @return,
+        wall_time: @wall_time,
+        exit_code: @exit_code,
+        output_files: @output_files,
+        compilation_result: @compilation_result,
+      }.to_json
+    end
   end
 end
 
