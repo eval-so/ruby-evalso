@@ -130,7 +130,7 @@ class Evalso
     def to_json
       {
         code:     @code,
-        stdount:  @stdout,
+        stdout:   @stdout,
         stderr:   @stderr,
         return:   @return,
         wall_time: @wall_time,
