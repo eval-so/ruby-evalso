@@ -6,11 +6,11 @@ require 'evalso/version'
 Gem::Specification.new do |spec|
   spec.name          = "evalso"
   spec.version       = Evalso::VERSION
-  spec.authors       = ["Nick Markwell"]
-  spec.email         = ["nick@duckinator.net"]
+  spec.authors       = ["Ellen Marie Dash"]
+  spec.email         = ["me@duckie.co"]
   spec.description   = %q{Evaluates code safely, via http://eval.so}
   spec.summary       = %q{Evaluates code safely, via http://eval.so}
-  spec.homepage      = "http://github.com/duckinator/ruby-evalso"
+  spec.homepage      = "http://github.com/eval-so/ruby-evalso"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
